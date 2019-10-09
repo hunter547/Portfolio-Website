@@ -52,8 +52,8 @@
 body { 
   background-color: var(--body-background-color); 
   font-family: var(--body-font-family);
-  font-weight: var(--body-font-weight);
   font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
   /* Sets the font size to 16px */
   line-height: 1.6;
   /* Sets the line-height to 1.6 */ 
@@ -77,32 +77,33 @@ h3 {
  font-weight: var(--main-font-weight);
 } 
 
-div {
-  padding: var(--main-padding); /* Adds a 10px inner spacing to all sides */ 
-  margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */ 
+div { 
   border: var(--border-thickness) var(--border-type) var(--border-color); /* Attributes describe: thickness, type, color */
+  margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */
+  padding: var(--main-padding); /* Adds a 10px inner spacing to all sides */ 
+  
 } 
 
 section {
   margin: 20px; 
 }
 
-table {
-  margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */ 
+table { 
   border: var(--border-thickness) var(--border-type) var(--border-color); /* Attributes describe: thickness, type, color */
+  margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */
 }
 
 a {
   color: var(--link-text-color);
 }
 
-a:hover, a:focus {
-  /* No underlining when hovering over a link */
-  text-decoration: none; 
+a:hover, a:focus { 
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
+  /* No underlining when hovering over a link */
+  text-decoration: none;
 } 
 
 a:visited {
@@ -116,19 +117,20 @@ a:active {
 } 
 
 button {
-  /* overwrites browser defaults and resets the border */
-  border: none;
-  /* takes the font from the outer container */
-  font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: var(--button-background-color);
+  /* overwrites browser defaults and resets the border */
+  border: none;/* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */ 
+  border-bottom: 2px var(--border-type) rgb(0, 0, 0);
+  border-bottom: 2px var(--border-type) rgba(0, 0, 0, 0.3);
+  border-radius: 3px; 
   color: var(--button-text-color);
-  text-decoration: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
   /* adds spacing to the button (this will be discussed more in-depth later) */
   padding: var(--main-padding);
-  border-radius: 3px;
-  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-  border-bottom: 2px var(--border-type) rgba(0, 0, 0, 0.3); 
+  text-decoration: none;
+  
   transition: 0.7s opacity;
 } 
 
@@ -139,63 +141,55 @@ button:hover, button:focus {
   opacity: 0.8;
 } 
 
-#resume-button {
-  border: 5px var(--border-thickness) transparent;
+.resume-button {
   background: var(--rbutton-background-color);
-  color: var(--rbutton-text-color);
+  border: 5px transparent;
   border-radius: 40px;
+  color: var(--rbutton-text-color);
+  font-weight: bold;
+  overflow: hidden; 
   padding: 15px 30px;
-  overflow: hidden;
-  width: 200px;
+  text-decoration: none;
+  text-indent: 15px;
   transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
   white-space: nowrap;
-  text-indent: 15px;
-  font-weight: bold; 
-  text-decoration: none;
+  width: 200px;
 }
-#resume-button span {
+.resume-button span {
   display: inline-block;
-  transform: translateX(300px);
   font-weight: normal;
   opacity: 0;
+  transform: translateX(300px);
   transition: opacity 0.1s 0.5s, transform 0.4s 0.5s;
-  transition: opacity 0.1s 0.5s, transform 0.4s 0.5s,
 }
-#resume-button:hover {
-  text-indent: 0; 
-  cursor: pointer;
+.resume-button:hover {
   background: var(--rbutton-hovor-background-color);
-  color: var(--rbutton-hover-text-color);
-  width: 275px;
-  /* border: 10px solid #8DCCC4; */
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  color: var(--rbutton-hover-text-color); 
+  cursor: pointer;
+  text-indent: 0;
+  width: 275px;
 }
-#resume-button:hover span { 
+.resume-button:hover span {
+  opacity: 1; 
   transform: translateX(0);
-  opacity: 1;
 }
-
-
-
-
-#page-container {
-  position: relative;
+.page-container {
+  border: 0; 
+  margin: 0;
   min-height: 100vh; 
   /* Footer height */ 
-  padding: 0px; 
-  margin: 0px;
-  border: 0px; 
+  padding: 0; 
+  position: relative;
 }
 
-#content-wrap { 
-  padding: 0px; 
+.content-wrap { 
+  border: 0; 
+  margin: 0; 
+  padding: 0; 
   /* Footer height */
-  padding-bottom: 7rem; 
-  margin: 0px; 
-  border: 0px;
+  padding-bottom: 7rem;
 }
-
-
 .button__secondary {
   background-color: #e0b354;
   color: #2b2b2b;
@@ -205,34 +199,33 @@ button:hover, button:focus {
   text-decoration: none;
 }
 
-.profile {
-  max-width: 700px; 
-  margin: 0 auto; 
-  padding-bottom: auto; 
+.profile { 
   border: none;
+  margin: 0 auto;
+  max-width: 700px;
 }
 
 
-.profile__portrait {
-  float: left; 
+.profile__portrait { 
+  border-radius: 50%; 
+  float: left;
+  margin-right: 40px;
   width: 250px; 
-  margin-right: 40px; 
-  border-radius: 50%;
 }  
 
 .page-header {
   display: flex; 
-  width: 100%; 
-  padding: 20px;
+  padding: 20px; 
+  width: 100%;
 } 
 
 .page-header__item {
   flex: 0 1 200px;
 } 
 
-#logo {
-  max-width: 200px; 
+.logo { 
   max-height: 200px; 
+  max-width: 200px;
 } 
 
 .page-header__item:last-child {
@@ -293,9 +286,9 @@ button:hover, button:focus {
   .grid {
     grid-template-columns: 1fr 1fr;
   } 
-  #logo {
-    max-width: 125px; 
+  .logo { 
     max-height: 125px;
+    max-width: 125px;
   }
 }
 
@@ -303,20 +296,21 @@ button:hover, button:focus {
   .grid {
     grid-template-columns: 1fr;
   } 
-  #logo {
-    max-width: 75px; 
+  .logo { 
     max-height: 75px;
+    max-width: 75px;
   }
 }
 
 .page-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0; 
-  width: 100%; 
-  height: 7rem;
+  background-color: rgb(127, 196, 196);
   background-color: rgba(127, 196, 196, .5);
-  text-align: center;  
+  bottom: 0; 
+  height: 7rem;
+  left: 0;
+  position: fixed;
+  text-align: center;   
+  width: 100%;
 } 
 
 .social-media {
@@ -324,9 +318,9 @@ button:hover, button:focus {
 }
 
 .experience-table table, th, td {
- padding: var(--main-padding);
  border: var(--border-thickness) var(--border-type) var(--border-color); 
  border-collapse: collapse;
+ padding: var(--main-padding);
 } 
 
 .contact-me-link { 
@@ -334,9 +328,9 @@ button:hover, button:focus {
 } 
 
 .resume {
-  border: none; 
-  margin-top: 20px; 
-  margin-left: 0px;
+  border: none;  
+  margin-left: 0;
+  margin-top: 20px;
 } 
 
 @keyframes color-change {
@@ -364,9 +358,9 @@ button:hover, button:focus {
   }
 } 
 
-.cloud-front { 
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear; 
   color: white;
-  animation: 30s cloud-move infinite alternate linear;
 } 
 
 @keyframes cloud-move-reverse {
@@ -387,12 +381,12 @@ button:hover, button:focus {
     transform: translate(0, 0); 
   }
 
-  to {
-    transform: translate(2000px, 0); 
-    opacity: 0.0
+  to { 
+    opacity: 0.0;
+    transform: translate(2000px, 0);
   } 
 } 
 
-#svg29 { 
+.svg29 { 
   animation: 1s motorcycle-move 1 alternate ease-in;
 } 

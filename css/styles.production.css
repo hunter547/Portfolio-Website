@@ -1,24 +1,6 @@
 /* First postprocess on PostCSS: https://madlittlemods.github.io/postcss-css-variables/playground/ */ 
 /* Then paste the output from PostCSS into the autoprefixer: http://autoprefixer.github.io/ */ 
 
-:root { 
-/* Shared Properties */
-
-/* Body Properties */ 
-
-/*Header Properties */
-
-/* Border Properties */
-
-/* Link Properties */
-
-/* Button Properties */ 
-
-/* Resume Button Properties */
-
-/* Grid Properties */
-}
-
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -28,8 +10,8 @@
 body { 
   background-color: #d5d8dc; 
   font-family: 'DM Serif Display', sans-serif;
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
   /* Sets the font size to 16px */
   line-height: 1.6;
   /* Sets the line-height to 1.6 */ 
@@ -53,32 +35,33 @@ h3 {
  font-weight: 700;
 } 
 
-div {
-  padding: 10px; /* Adds a 10px inner spacing to all sides */ 
-  margin: 10px; /* Adds a 10px outer spacing to all sides */ 
+div { 
   border: 1px solid black; /* Attributes describe: thickness, type, color */
+  margin: 10px; /* Adds a 10px outer spacing to all sides */
+  padding: 10px; /* Adds a 10px inner spacing to all sides */ 
+  
 } 
 
 section {
   margin: 20px; 
 }
 
-table {
-  margin: 10px; /* Adds a 10px outer spacing to all sides */ 
+table { 
   border: 1px solid black; /* Attributes describe: thickness, type, color */
+  margin: 10px; /* Adds a 10px outer spacing to all sides */
 }
 
 a {
   color: #357b70;
 }
 
-a:hover, a:focus {
-  /* No underlining when hovering over a link */
-  text-decoration: none; 
+a:hover, a:focus { 
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
+  /* No underlining when hovering over a link */
+  text-decoration: none;
 } 
 
 a:visited {
@@ -92,24 +75,29 @@ a:active {
 } 
 
 button {
-  /* overwrites browser defaults and resets the border */
-  border: none;
-  /* takes the font from the outer container */
-  font-family: inherit;
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: #357b70;
-  color: #ffffff;
-  text-decoration: none;
-  /* adds spacing to the button (this will be discussed more in-depth later) */
-  padding: 10px;
+  /* overwrites browser defaults and resets the border */
+  border: none; 
+  border-bottom: 2px solid rgb(0, 0, 0);
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */ 
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
-          border-radius: 3px;
-  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3); 
-  -webkit-transition: 0.7s opacity; 
-  -o-transition: 0.7s opacity; 
-  -moz-transition: 0.7s opacity; 
+          border-radius: 3px; 
+  color: #ffffff;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  text-decoration: none;
+  
+  -webkit-transition: 0.7s opacity;
+  
+  -o-transition: 0.7s opacity;
+  
+  -moz-transition: 0.7s opacity;
+  
   transition: 0.7s opacity;
 } 
 
@@ -120,84 +108,77 @@ button:hover, button:focus {
   opacity: 0.8;
 } 
 
-#resume-button {
-  border: 5px 1px transparent;
+.resume-button {
   background: #aed6d1;
-  color: #55706d;
+  border: 5px transparent;
   -webkit-border-radius: 40px;
      -moz-border-radius: 40px;
           border-radius: 40px;
+  color: #55706d;
+  font-weight: bold;
+  overflow: hidden; 
   padding: 15px 30px;
-  overflow: hidden;
-  width: 200px;
+  text-decoration: none;
+  text-indent: 15px;
   -webkit-transition: all 1.2s, border 0.5s 1.2s, -webkit-box-shadow 0.3s 1.5s;
-  transition: all 1.2s, border 0.5s 1.2s, -webkit-box-shadow 0.3s 1.5s;
   -o-transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
   -moz-transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s, -moz-box-shadow 0.3s 1.5s;
+  transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s, -webkit-box-shadow 0.3s 1.5s, -moz-box-shadow 0.3s 1.5s; 
+  transition: all 1.2s, border 0.5s 1.2s, -webkit-box-shadow 0.3s 1.5s;
   transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
-  transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s, -webkit-box-shadow 0.3s 1.5s, -moz-box-shadow 0.3s 1.5s;
   white-space: nowrap;
-  text-indent: 15px;
-  font-weight: bold; 
-  text-decoration: none;
+  width: 200px;
 }
-#resume-button span {
+.resume-button span {
   display: inline-block;
+  font-weight: normal;
+  opacity: 0;
   -webkit-transform: translateX(300px);
      -moz-transform: translateX(300px);
       -ms-transform: translateX(300px);
        -o-transform: translateX(300px);
           transform: translateX(300px);
-  font-weight: normal;
-  opacity: 0;
   -webkit-transition: opacity 0.1s 0.5s, -webkit-transform 0.4s 0.5s;
-  transition: opacity 0.1s 0.5s, -webkit-transform 0.4s 0.5s;
   -o-transition: opacity 0.1s 0.5s, -o-transform 0.4s 0.5s;
   -moz-transition: opacity 0.1s 0.5s, transform 0.4s 0.5s, -moz-transform 0.4s 0.5s;
+  transition: opacity 0.1s 0.5s, transform 0.4s 0.5s, -webkit-transform 0.4s 0.5s, -moz-transform 0.4s 0.5s, -o-transform 0.4s 0.5s; 
+  transition: opacity 0.1s 0.5s, -webkit-transform 0.4s 0.5s;
   transition: opacity 0.1s 0.5s, transform 0.4s 0.5s;
-  transition: opacity 0.1s 0.5s, transform 0.4s 0.5s, -webkit-transform 0.4s 0.5s, -moz-transform 0.4s 0.5s, -o-transform 0.4s 0.5s
 }
-#resume-button:hover {
-  text-indent: 0; 
-  cursor: pointer;
+.resume-button:hover {
   background: #55706d;
-  color: #ffe8a3;
-  width: 275px;
-  /*border: 10px solid #8DCCC4;*/
   -webkit-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
      -moz-box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  color: #ffe8a3; 
+  cursor: pointer;
+  text-indent: 0;
+  width: 275px;
 }
-#resume-button:hover span { 
+.resume-button:hover span {
+  opacity: 1; 
   -webkit-transform: translateX(0); 
      -moz-transform: translateX(0); 
       -ms-transform: translateX(0); 
        -o-transform: translateX(0); 
           transform: translateX(0);
-  opacity: 1;
 }
-
-
-
-
-#page-container {
-  position: relative;
+.page-container {
+  border: 0; 
+  margin: 0;
   min-height: 100vh; 
   /* Footer height */ 
-  padding: 0px; 
-  margin: 0px;
-  border: 0px; 
+  padding: 0; 
+  position: relative;
 }
 
-#content-wrap { 
-  padding: 0px; 
+.content-wrap { 
+  border: 0; 
+  margin: 0; 
+  padding: 0; 
   /* Footer height */
-  padding-bottom: 7rem; 
-  margin: 0px; 
-  border: 0px;
+  padding-bottom: 7rem;
 }
-
-
 .button__secondary {
   background-color: #e0b354;
   color: #2b2b2b;
@@ -207,21 +188,20 @@ button:hover, button:focus {
   text-decoration: none;
 }
 
-.profile {
-  max-width: 700px; 
-  margin: 0 auto; 
-  padding-bottom: auto; 
+.profile { 
   border: none;
+  margin: 0 auto;
+  max-width: 700px;
 }
 
 
-.profile__portrait {
-  float: left; 
-  width: 250px; 
-  margin-right: 40px; 
+.profile__portrait { 
   -webkit-border-radius: 50%; 
      -moz-border-radius: 50%; 
-          border-radius: 50%;
+          border-radius: 50%; 
+  float: left;
+  margin-right: 40px;
+  width: 250px; 
 }  
 
 .page-header {
@@ -230,29 +210,32 @@ button:hover, button:focus {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex; 
-  width: 100%; 
-  padding: 20px;
+  padding: 20px; 
+  width: 100%;
 } 
 
 .page-header__item {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 1 200px;
-     -moz-box-flex: 0;
-      -ms-flex: 0 1 200px;
-          flex: 0 1 200px;
+ -moz-box-flex: 0; 
+ -ms-box-flex: 0;
+ -webkit-box-flex: 0;
+ -ms-flex: 0 1 200px;
+ flex: 0 1 200px;
+ -webkit-flex: 0 1 200px; 
+
 } 
 
-#logo {
-  max-width: 200px; 
+.logo { 
   max-height: 200px; 
+  max-width: 200px;
 } 
 
-.page-header__item:last-child {
+.page-header__item:last-child { 
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
-     -moz-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; 
+  flex-grow: 1; 
+  -ms-flex-positive: 1;  
   text-align: right;
 
 } 
@@ -276,7 +259,7 @@ button:hover, button:focus {
 /* Styling CSS Grid*/
 
 .grid {
-  display: -ms-grid;
+  display: -moz-grid;
   display: grid; 
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr; 
   grid-template-columns: 1fr 1fr 1fr; 
@@ -293,8 +276,8 @@ button:hover, button:focus {
   -ms-grid-column: 3;
   grid-column: 3 / 3;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   grid-row: 1 / 3;
+  -ms-grid-row-span: 2;
 } 
 
 @media all and (max-width: 750px) {
@@ -315,9 +298,9 @@ button:hover, button:focus {
     -ms-grid-columns: 1fr 10px 1fr;
     grid-template-columns: 1fr 1fr;
   } 
-  #logo {
-    max-width: 125px; 
+  .logo { 
     max-height: 125px;
+    max-width: 125px;
   }
 }
 
@@ -326,20 +309,21 @@ button:hover, button:focus {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   } 
-  #logo {
-    max-width: 75px; 
+  .logo { 
     max-height: 75px;
+    max-width: 75px;
   }
 }
 
 .page-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0; 
-  width: 100%; 
-  height: 7rem;
+  background-color: rgb(127, 196, 196);
   background-color: rgba(127, 196, 196, .5);
-  text-align: center;  
+  bottom: 0; 
+  height: 7rem;
+  left: 0;
+  position: fixed;
+  text-align: center;   
+  width: 100%;
 } 
 
 .social-media {
@@ -347,21 +331,21 @@ button:hover, button:focus {
 }
 
 .experience-table table {
- padding: 10px;
  border: 1px solid black; 
  border-collapse: collapse;
+ padding: 10px;
 }
 
 th {
- padding: 10px;
  border: 1px solid black; 
  border-collapse: collapse;
+ padding: 10px;
 }
 
 td {
- padding: 10px;
  border: 1px solid black; 
  border-collapse: collapse;
+ padding: 10px;
 } 
 
 .contact-me-link { 
@@ -369,9 +353,9 @@ td {
 } 
 
 .resume {
-  border: none; 
-  margin-top: 20px; 
-  margin-left: 0px;
+  border: none;  
+  margin-left: 0;
+  margin-top: 20px;
 } 
 
 @-webkit-keyframes color-change {
@@ -477,12 +461,12 @@ td {
   }
 } 
 
-.cloud-front { 
-  color: white;
+.cloud-front {
   -webkit-animation: 30s cloud-move infinite alternate linear;
      -moz-animation: 30s cloud-move infinite alternate linear;
        -o-animation: 30s cloud-move infinite alternate linear;
-          animation: 30s cloud-move infinite alternate linear;
+          animation: 30s cloud-move infinite alternate linear; 
+  color: white;
 } 
 
 @-webkit-keyframes cloud-move-reverse {
@@ -546,10 +530,10 @@ td {
             transform: translate(0, 0); 
   }
 
-  to {
+  to { 
+    opacity: 0.0;
     -webkit-transform: translate(2000px, 0);
-            transform: translate(2000px, 0); 
-    opacity: 0.0
+            transform: translate(2000px, 0);
   } 
 } 
 
@@ -559,10 +543,10 @@ td {
          transform: translate(0, 0); 
   }
 
-  to {
+  to { 
+    opacity: 0.0;
     -moz-transform: translate(2000px, 0);
-         transform: translate(2000px, 0); 
-    opacity: 0.0
+         transform: translate(2000px, 0);
   } 
 } 
 
@@ -572,10 +556,10 @@ td {
        transform: translate(0, 0); 
   }
 
-  to {
+  to { 
+    opacity: 0.0;
     -o-transform: translate(2000px, 0);
-       transform: translate(2000px, 0); 
-    opacity: 0.0
+       transform: translate(2000px, 0);
   } 
 } 
 
@@ -587,16 +571,16 @@ td {
             transform: translate(0, 0); 
   }
 
-  to {
+  to { 
+    opacity: 0.0;
     -webkit-transform: translate(2000px, 0);
        -moz-transform: translate(2000px, 0);
          -o-transform: translate(2000px, 0);
-            transform: translate(2000px, 0); 
-    opacity: 0.0
+            transform: translate(2000px, 0);
   } 
 } 
 
-#svg29 { 
+.svg29 { 
   -webkit-animation: 1s motorcycle-move 1 alternate ease-in; 
      -moz-animation: 1s motorcycle-move 1 alternate ease-in; 
        -o-animation: 1s motorcycle-move 1 alternate ease-in; 

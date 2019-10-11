@@ -255,7 +255,8 @@ button:hover, button:focus {
 .grid {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-gap: 20px;
+  grid-gap: 20px; 
+  width: 100%;
 } 
 
 .grid__item {
@@ -292,9 +293,22 @@ button:hover, button:focus {
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (min-width: 320px) and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
+  } 
+  .logo { 
+    max-height: 75px;
+    max-width: 75px;
+  }
+} 
+
+@media all and (max-width: 320px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }  
+  .grid__item {
+    margin: 0;
   } 
   .logo { 
     max-height: 75px;

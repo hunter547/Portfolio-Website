@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"> 
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Current Work</title> 
+	<title>Current Work</title>
 	<link rel="shortcut icon" href="img/shortcut-icon.png">
-	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet" type="text/css">
-	<link href="css/styles.production.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
-<body> 
-	<div class="page-container"> 
+<body>
+	<div class="page-container">
 		<div class="content-wrap">
 			<header class="page-header">
 				<!-- Add my logo here -->
@@ -19,82 +19,74 @@
 				<nav class="main-navigation page-header__item">
 					<ul role="menubar" class="navigation-list">
 						<li role="presentation">
-							<a href="index.html" role="menuitem" class="navigation-list_item">Home</a> 
-						</li> 
+							<a href="index.html" role="menuitem" class="navigation-list_item">Home</a>
+						</li>
 						<li role="presentation">
-							<a href="about.html" role="menuitem" class="navigation-list_item">About Me</a> 
-						</li> 
+							<a href="about.html" role="menuitem" class="navigation-list_item">About Me</a>
+						</li>
 						<li role="presentation">
-							<a href="contact.html" role="menuitem" class="navigation-list_item">Contact</a> 
-						</li> 
-						<li role="presentation">
-							<a href="register.html" role="menuitem" class="navigation-list_item">Mailing List</a>
-						</li> 
+							<a href="contact.html" role="menuitem" class="navigation-list_item">Contact</a>
+						</li>
 						<li role="presentation">
 							<a href="work.html" role="menuitem" class="navigation-list_item navigation-list__item--active">My Work</a>
 						</li>
-						<li role="presentation">
-							<a href="img/funny.webp" download target="_blank" role="menuitem" class="navigation-list_item">Have a laugh</a>
-						</li>
 					</ul>
-				</nav> 
+				</nav>
 			</header>
 			<section>
-				<h1>Work</h1> 
+				<h1>Work</h1>
 				<div class="grid">
-					<div class="grid__item">
-						<h2>Hotel Web App</h2> 
-						<p>
-							This is a hotel management website that accounts for rooms, customers, room service, and secured payments.
-						</p> 
-						<a href="#">See project on GitHub</a>
-					</div> 
-					<div class="grid__item">
-						<h2>Skateboard Web App</h2> 
-						<p>
-							This is a skateboard customization website. It allows customers to select decks, wheels, trucks, board art, and grip tape. Their order is sent to Element for assembly and shipment.
-						</p> 
-						<a href="#">See project on GitHub</a>
-					</div>	
-					<div class="grid__item">
-						<h2>Post Card Web App</h2> 
-						<p>
-							This is application brings together a collection of postcards from different vendors around the world. Customers are allowed to select a postcard and have the vendor write and send it from the origin country. The site also includes a secure payment system that sends money to the vendor.
-						</p> 
-						<a href="#">See project on GitHub</a>
-					</div>	
-					<div class="grid__item">
-						<h2>Polaroid Picture Web App</h2> 
-						<p>
-							This is a retro product site built using React and Javascript. It allows the user to upload an image which is sent to an undisclosed location. The image is then printed and a picture of the image is taken by a Polaroid camera. The Polaroid picture is then shaken and sent to the customer through the mail.
-						</p> 
-						<a href="#">See project on GitHub</a>
-					</div> 
-					<div class="grid__item">
-						<h2>Local Pool Website</h2> 
-						<p>
-							My community pool asked me to redo thier website to attract the younger generation and to link it to this social media that all the youngsters are talking about.
-						</p> 
-						<a href="#">See project on GitHub</a>
-					</div> 
-					<div class="grid__item">
-						<h2>Gangster Web App</h2> 
-						<p>
-							This web app is a social media platform for self identified gangsters. It allows them to converse about all the cool new oversized shirts and pants hitting the market. It also pulls in an API that retrieves any '64 Impalas that are being sold near them.
-						</p> 
-						<a href="#">See project on GitHub</a>
+					<div class="grid__item movie-app">
+						<span id ="movie-app-info">
+							<h2>Movie Full Stack App</h2>
+							<p>
+								This full stack application using React, JWT, and Node.js for serverside (which queries a REST API built from scratch) allows you to create a profile, browse movies, favorite movies, explore directors, and update information.
+							</p>
+							<button onclick="window.open('https://github.com/hunter547/movie_api','newwindow');" class="resume-button movie-button">See project <span>on GitHub</span></button>
+							<button onclick="window.open('https://my-flix-api-evanoff.herokuapp.com/client/register','newwindow');" class="resume-button movie-button">Go to App <span>on Heroku</span></button>
+						</span>
+					</div>
+					<div class="grid__item harry-app">
+						<span id="harry-app-info">
+							<h2>Harry Potter App</h2>
+							<p>
+								This front end Bootstrap and jQuery focused app uses an existing Harry Potter REST API to show modal driven displays about Harry Potter characters.
+							</p>
+							<button onclick="window.open('https://github.com/hunter547/harry-potter-jquery-app','newwindow');" class="resume-button harry-button">See project <span>on GitHub</span></button>
+							<button onclick="window.open('https://hunter547.github.io/harry-potter-jquery-app','newwindow');" class="resume-button harry-button">Go to App <span>on GitHub Pages</span></button>
+						</span>
+					</div>
+					<div class="grid__item angular-app">
+						<span id="angular-app-info">
+							<h2>Angular Quiz App</h2>
+							<p>
+								This application was written using Angular to create a responsive quiz application with welcome, quiz, questions, and result components.
+							</p>
+							<button onclick="window.open('https://github.com/hunter547/angular-quiz','newwindow');" class="resume-button angular-button">See project <span>on GitHub</span></button>
+							<button onclick="window.open('https://hunter547.github.io/angular-quiz/welcome','newwindow');" class="resume-button angular-button">Go to App <span>on GitHub Pages</span></button>
+						</span>
+					</div>
+					<div class="grid__item vue-app">
+						<span id="vue-app-info">
+							<h2>Vue Todo App</h2>
+							<p>
+								A todo list app that was written using Vue to provide a responsive application that allows a user to add, edit, complete, and delete todo items with clean Material Design UI. Also implemented the Vue.Draggable package that allows the user to sort todo items.
+							</p>
+							<button onclick="window.open('https://github.com/hunter547/vue-todo-app','newwindow');" class="resume-button vue-button">See project <span>on GitHub</span></button>
+							<button onclick="window.open('https://hunter547.github.io/vue-todo-app','newwindow');" class="resume-button vue-button">Go to App <span>on GitHub Pages</span></button>
+						</span>
 					</div>
 				</div>
-			</section> 
+			</section>
 		</div>
-		<footer class="page-footer"> 
-			<p>Find me on</p>  
+		<footer class="page-footer">
+			<p>Find me on</p>
 			<div class="social-media">
 				<a href="https://www.github.com/hunter547" target="_blank"><img src="img/github.svg" alt="Github"></a>
 				<a href="https://twitter.com/enragedfire" target="_blank"><img src="img/twitter.svg" alt="Twitter"></a>
-				<a href="https://www.linkedin.com/in/hunterevanoff" target="_blank"><img src="img/linkedin.svg" alt="LinkedIn"></a> 
-			</div> 
-		</footer> 
+				<a href="https://www.linkedin.com/in/hunterevanoff" target="_blank"><img src="img/linkedin.svg" alt="LinkedIn"></a>
+			</div>
+		</footer>
 	</div>
 	<!-- <script src="js/tota11y.min.js"></script> -->
 </body>

@@ -1,47 +1,47 @@
-/* First postprocess on PostCSS: https://madlittlemods.github.io/postcss-css-variables/playground/ */ 
-/* Then paste the output from PostCSS into the autoprefixer: http://autoprefixer.github.io/ */ 
+/* First postprocess on PostCSS: https://madlittlemods.github.io/postcss-css-variables/playground/ */
+/* Then paste the output from PostCSS into the autoprefixer: http://autoprefixer.github.io/ */
 
-:root { 
-/* Shared Properties */ 
-  --main-margin: 10px; 
-  --main-padding: 10px; 
+:root {
+/* Shared Properties */
+  --main-margin: 10px;
+  --main-padding: 10px;
   --main-font-weight: 700;
 
-/* Body Properties */ 
-  --body-font-family: 'DM Serif Display', sans-serif; 
-  --body-background-color: #d5d8dc; 
-  --body-font-size: 16px; 
-  --body-font-weight: 400; 
+/* Body Properties */
+  --body-font-family: 'DM Serif Display', sans-serif;
+  --body-background-color: #d5d8dc;
+  --body-font-size: 16px;
+  --body-font-weight: 400;
 
 /*Header Properties */
   --header-font-family: 'Bungee Shade', cursive;
-  --h1-font-size: 30px; 
-  --h2-font-size: 24px; 
+  --h1-font-size: 40px;
+  --h2-font-size: 24px;
   --h3-font-size: 18px;
 
-/* Border Properties */ 
-  --border-thickness: 1px; 
-  --border-color: black; 
+/* Border Properties */
+  --border-thickness: 1px;
+  --border-color: black;
   --border-type: solid;
 
 /* Link Properties */
-  --link-text-color: #357b70; 
-  --link-visited-color: #05676e; 
+  --link-text-color: #357b70;
+  --link-visited-color: #05676e;
   --link-activated-color: #489c79;
 
-/* Button Properties */ 
-  --button-background-color: #357b70; 
+/* Button Properties */
+  --button-background-color: #357b70;
   --button-text-color: #ffffff;
-  --button-secondary-background-color: #e0b354; 
-  --button-secondary-text-color: #2b2b2b; 
+  --button-secondary-background-color: #e0b354;
+  --button-secondary-text-color: #2b2b2b;
 
-/* Resume Button Properties */ 
-  --rbutton-background-color: #aed6d1; 
-  --rbutton-text-color: #55706d; 
-  --rbutton-hovor-background-color: #55706d; 
+/* Resume Button Properties */
+  --rbutton-background-color: #aed6d1;
+  --rbutton-text-color: #55706d;
+  --rbutton-hovor-background-color: #55706d;
   --rbutton-hover-text-color: #ffe8a3;
 
-/* Grid Properties */ 
+/* Grid Properties */
   --grid-background-color: lightgray;
 }
 
@@ -49,46 +49,46 @@
   box-sizing: border-box;
 }
 
-body { 
-  background-color: var(--body-background-color); 
+body {
+  background-color: var(--body-background-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   font-weight: var(--body-font-weight);
   /* Sets the font size to 16px */
   line-height: 1.6;
-  /* Sets the line-height to 1.6 */ 
-} 
+  /* Sets the line-height to 1.6 */
+}
 
-h1 { 
+h1 {
  font-family: var(--header-font-family);
  font-size: var(--h1-font-size);
  font-weight: var(--main-font-weight);
 }
 
-h2 { 
+h2 {
  font-family: var(--header-font-family);
  font-size: var(--h2-font-size);
  font-weight: var(--main-font-weight);
 }
 
-h3 { 
+h3 {
  font-family: var(--header-font-family);
  font-size: var(--h3-font-size);
  font-weight: var(--main-font-weight);
-} 
-
-div { 
-  border: var(--border-thickness) var(--border-type) var(--border-color); /* Attributes describe: thickness, type, color */
-  margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */
-  padding: var(--main-padding); /* Adds a 10px inner spacing to all sides */ 
-  
-} 
-
-section {
-  margin: 20px; 
 }
 
-table { 
+div {
+  border: var(--border-thickness) var(--border-type) var(--border-color); /* Attributes describe: thickness, type, color */
+  margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */
+  padding: var(--main-padding); /* Adds a 10px inner spacing to all sides */
+
+}
+
+section {
+  margin: 20px;
+}
+
+table {
   border: var(--border-thickness) var(--border-type) var(--border-color); /* Attributes describe: thickness, type, color */
   margin: var(--main-margin); /* Adds a 10px outer spacing to all sides */
 }
@@ -97,14 +97,14 @@ a {
   color: var(--link-text-color);
 }
 
-a:hover, a:focus { 
+a:hover, a:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
   /* No underlining when hovering over a link */
   text-decoration: none;
-} 
+}
 
 a:visited {
   /* visited link */
@@ -114,32 +114,32 @@ a:visited {
 a:active {
   /* selected link */
   color: var(--link-activated-color);
-} 
+}
 
 button {
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: var(--button-background-color);
   /* overwrites browser defaults and resets the border */
-  border: none;/* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */ 
+  border: none;/* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px var(--border-type) rgb(0, 0, 0);
   border-bottom: 2px var(--border-type) rgba(0, 0, 0, 0.3);
-  border-radius: 3px; 
+  border-radius: 3px;
   color: var(--button-text-color);
   /* takes the font from the outer container */
   font-family: inherit;
   /* adds spacing to the button (this will be discussed more in-depth later) */
   padding: var(--main-padding);
   text-decoration: none;
-  
+
   transition: 0.7s opacity;
-} 
+}
 
 button:hover, button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
-} 
+}
 
 .resume-button {
   background: var(--rbutton-background-color);
@@ -147,11 +147,13 @@ button:hover, button:focus {
   border-radius: 40px;
   color: var(--rbutton-text-color);
   font-weight: bold;
-  overflow: hidden; 
+  margin-right: .5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
   padding: 15px 30px;
   text-decoration: none;
   text-indent: 15px;
-  transition: all 1.2s, border 0.5s 1.2s, box-shadow 0.3s 1.5s;
+  transition: all .6s, border 0.25s .6s, box-shadow 0.15s .75s;
   white-space: nowrap;
   width: 200px;
 }
@@ -160,115 +162,111 @@ button:hover, button:focus {
   font-weight: normal;
   opacity: 0;
   transform: translateX(300px);
-  transition: opacity 0.1s 0.5s, transform 0.4s 0.5s;
+  transition: opacity 0.05s 0.25s, transform 0.2s 0.25s;
 }
 .resume-button:hover {
   background: var(--rbutton-hovor-background-color);
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
-  color: var(--rbutton-hover-text-color); 
+  color: var(--rbutton-hover-text-color);
   cursor: pointer;
   text-indent: 0;
   width: 275px;
 }
 .resume-button:hover span {
-  opacity: 1; 
+  opacity: 1;
   transform: translateX(0);
 }
 .page-container {
-  border: 0; 
+  border: 0;
   margin: 0;
-  min-height: 100vh; 
-  /* Footer height */ 
-  padding: 0; 
+  min-height: 100vh;
+  /* Footer height */
+  padding: 0;
   position: relative;
 }
 
-.content-wrap { 
-  border: 0; 
-  margin: 0; 
-  padding: 0; 
+.content-wrap {
+  border: 0;
+  margin: 0;
+  padding: 0;
   /* Footer height */
   padding-bottom: 7rem;
 }
 .button__secondary {
   background-color: #e0b354;
   color: #2b2b2b;
-} 
+}
 
 .navigation-list__item--active {
   text-decoration: none;
 }
 
-.profile { 
+.profile {
   border: none;
   margin: 0 auto;
   max-width: 700px;
 }
 
 
-.profile__portrait { 
-  border-radius: 50%; 
+.profile__portrait {
+  border-radius: 50%;
   float: left;
   margin-right: 40px;
-  width: 250px; 
-}  
+  width: 250px;
+}
 
 .page-header {
-  display: flex; 
-  padding: 20px; 
+  display: flex;
+  padding: 20px;
   width: 100%;
-} 
+}
 
 .page-header__item {
   flex: 0 1 200px;
-} 
+}
 
-.logo { 
-  max-height: 200px; 
+.logo {
+  max-height: 200px;
   max-width: 200px;
-} 
+}
 
 .page-header__item:last-child {
-  flex-grow: 1; 
+  flex-grow: 1;
   text-align: right;
 
-} 
+}
 
 .navigation-list {
   list-style-type: none;
-} 
+}
 
 .navigation-list li {
-  display: inline-block; 
+  display: inline-block;
   margin-left: 15px;
-} 
+}
 
-/*  Grid Fallback */ 
+/*  Grid Fallback */
 
 .grid__item {
-  display: inline-block; 
+  display: inline-block;
   width: 33%
 }
 
 /* Styling CSS Grid*/
 
 .grid {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-gap: 20px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
   width: 100%;
-} 
+}
 
 .grid__item {
-  background-color: var(--grid-background-color); 
-  padding: var(--main-padding); 
+  background-color: var(--grid-background-color);
+  padding: var(--main-padding);
   width: auto;
-} 
-
-.grid__item:last-child {
-  grid-column: 3 / 3;
-  grid-row: 1 / 3;
-} 
+  border-radius: 1rem;
+}
 
 @media all and (max-width: 750px) {
   .grid {
@@ -281,13 +279,13 @@ button:hover, button:focus {
   h1 {
     font-size: 22px;
   }
-} 
+}
 
 @media all and (min-width: 500px) and (max-width: 750px){
   .grid {
     grid-template-columns: 1fr 1fr;
-  } 
-  .logo { 
+  }
+  .logo {
     max-height: 125px;
     max-width: 125px;
   }
@@ -296,56 +294,172 @@ button:hover, button:focus {
 @media all and (min-width: 320px) and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
-  } 
-  .logo { 
-    max-height: 75px;
-    max-width: 75px;
   }
-} 
-
-@media all and (max-width: 320px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }  
-  .grid__item {
-    margin: 0;
-  } 
-  .logo { 
+  .logo {
     max-height: 75px;
     max-width: 75px;
   }
 }
 
+@media all and (max-width: 320px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid__item {
+    margin: 0;
+  }
+  .logo {
+    max-height: 75px;
+    max-width: 75px;
+  }
+}
+
+.angular-app {
+  background-image: url(../img/Angular-app.png);
+  background-size: cover;
+}
+
+.angular-app:hover {
+  background-image: none;
+  background-color: #eef6fd;
+}
+
+.angular-app:hover #angular-app-info {
+  color: black;
+}
+
+.angular-app:hover .angular-button {
+  color:var(--rbutton-text-color);
+  background:var(--rbutton-background-color);
+}
+
+.angular-app:hover .angular-button:hover {
+  color:var(--rbutton-hover-text-color);
+  background: var(--rbutton-hovor-background-color);
+}
+
+#angular-app-info, .angular-button {
+  color: transparent;
+  background: transparent;
+}
+
+.harry-app {
+  background-image: url(../img/Harry-potter-app.png);
+  background-size: cover;
+}
+
+.harry-app:hover {
+  background-image: none;
+  background-color: #a9c4d0;
+}
+
+.harry-app:hover #harry-app-info {
+  color: black;
+}
+
+.harry-app:hover .harry-button {
+  color:var(--rbutton-text-color);
+  background:var(--rbutton-background-color);
+}
+
+.harry-app:hover .harry-button:hover {
+  color:var(--rbutton-hover-text-color);
+  background: var(--rbutton-hovor-background-color);
+}
+
+#harry-app-info, .harry-button {
+  color: transparent;
+  background: transparent;
+}
+
+.movie-app {
+  background-image: url(../img/Movie-app.png);
+  background-size: cover;
+}
+
+.movie-app:hover {
+  background-image: none;
+  background-color: #fffff0;
+}
+
+.movie-app:hover #movie-app-info {
+  color: black;
+}
+
+.movie-app:hover .movie-button {
+  color:var(--rbutton-text-color);
+  background:var(--rbutton-background-color);
+}
+
+.movie-app:hover .movie-button:hover {
+  color:var(--rbutton-hover-text-color);
+  background: var(--rbutton-hovor-background-color);
+}
+
+#movie-app-info, .movie-button {
+  color: transparent;
+  background: transparent;
+}
+
+.vue-app {
+  background-image: url(../img/Vue-app.png);
+  background-size: cover;
+}
+
+.vue-app:hover {
+  background-image: none;
+  background-color: #0c1824;
+}
+
+.vue-app:hover #vue-app-info {
+  color: white;
+}
+
+.vue-app:hover .vue-button {
+  color:var(--rbutton-text-color);
+  background:var(--rbutton-background-color);
+}
+
+.vue-app:hover .vue-button:hover {
+  color:var(--rbutton-hover-text-color);
+  background: var(--rbutton-hovor-background-color);
+}
+
+#vue-app-info, .vue-button {
+  color: transparent;
+  background: transparent;
+}
+
 .page-footer {
   background-color: rgb(127, 196, 196);
   background-color: rgba(127, 196, 196, .5);
-  bottom: 0; 
+  bottom: 0;
   height: 7rem;
   left: 0;
   position: fixed;
-  text-align: center;   
+  text-align: center;
   width: 100%;
-} 
+}
 
 .social-media {
   border: none;
 }
 
 .experience-table table, th, td {
- border: var(--border-thickness) var(--border-type) var(--border-color); 
+ border: var(--border-thickness) var(--border-type) var(--border-color);
  border-collapse: collapse;
  padding: var(--main-padding);
-} 
+}
 
-.contact-me-link { 
- font-family: var(--body-font-family); 
-} 
+.contact-me-link {
+ font-family: var(--body-font-family);
+}
 
 .resume {
-  border: none;  
+  border: none;
   margin-left: 0;
   margin-top: 20px;
-} 
+}
 
 @keyframes color-change {
   0% {
@@ -357,11 +471,11 @@ button:hover, button:focus {
   100% {
     fill: #f76414;
   }
-} 
+}
 
 .sun {
-  animation: 4s color-change infinite alternate linear; 
-} 
+  animation: 4s color-change infinite alternate linear;
+}
 
 @keyframes cloud-move {
   from {
@@ -370,37 +484,37 @@ button:hover, button:focus {
   to {
     transform: translate(200px, 50px);
   }
-} 
+}
 
 .cloud-front {
-  animation: 30s cloud-move infinite alternate linear; 
+  animation: 30s cloud-move infinite alternate linear;
   color: white;
-} 
+}
 
 @keyframes cloud-move-reverse {
   from {
-    transform: translate(446px, 48px); 
+    transform: translate(446px, 48px);
   }
   to {
     transform: translate(100px, 48px);
   }
-} 
+}
 
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
-} 
+}
 
 @keyframes motorcycle-move {
   from {
-    transform: translate(0, 0); 
+    transform: translate(0, 0);
   }
 
-  to { 
+  to {
     opacity: 0.0;
     transform: translate(2000px, 0);
-  } 
-} 
+  }
+}
 
-.svg29 { 
+.svg29 {
   animation: 1s motorcycle-move 1 alternate ease-in;
-} 
+}
